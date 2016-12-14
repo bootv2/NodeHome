@@ -1,0 +1,9 @@
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\bin\Debug\BeatDetect.exe.config
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\bin\Debug\BeatDetect.exe
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\bin\Debug\BeatDetect.pdb
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.csprojResolveAssemblyReference.cache
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.Properties.Resources.resources
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.csproj.GenerateResource.Cache
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.exe
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.pdb
+C:\Users\tboode\Documents\OneDrive - Every Angle Software Solutions BV\Documents\Visual Studio 2015\Projects\BeatDetect\BeatDetect\obj\Debug\BeatDetect.Form1.resources
