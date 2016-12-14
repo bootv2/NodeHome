@@ -25,7 +25,7 @@ namespace BeatDetect
             detector.loadSystem();
             //electronic music most of the time needs a sample size of 2048
             //music like rage against the machine works best with a sample size of 256 but still barely works
-            detector.LoadSong(256, "ratm.mp3");
+            detector.LoadSong(2048, "eminem.mp3");
             
             reporter = BeatReporter.GetReporterInstance(detector);
             Console.WriteLine("Instance initialized and loaded!");
@@ -33,7 +33,8 @@ namespace BeatDetect
 
         private void button2_Click(object sender, EventArgs e)
         {
-            reporter.DetectAndReportBeats();
+            Task reporterTask = reporter.GetDetectionTask();
+            reporterTask.Start();
         }
     }
 }

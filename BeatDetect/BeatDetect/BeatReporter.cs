@@ -25,10 +25,10 @@ namespace BeatDetect
             return myself ?? (myself = new BeatReporter(detector));
         }
 
-        //public Task GetDetectionTask()
-        //{
-            
-        //}
+        public Task GetDetectionTask()
+        {
+            return new Task(DetectAndReportBeats);
+        }
 
         public void DetectAndReportBeats()
         {
@@ -37,16 +37,13 @@ namespace BeatDetect
             while (true)
             {
                 detector.update();
+                //if(lastBeat == detector.getLastBeat())
 
                 lastBeat = detector.getLastBeat();
 
-                //I'm sure no song has a bpm higher than 6000 so 
-                //it's safe to sleep 10ms before checking if a new beat has been detected
-                //This will also save a lot of processing power.
-                Thread.Sleep(10);
-                if(detector.getLastBeat() != null && lastBeat != null)
+                if(lastBeat != null)
                 {
-                    if (lastBeat.getMilliseconds() != detector.getLastBeat().getMilliseconds())
+                    if (!lastBeat.Equals(detector.getLastBeat()))
                         reportLastBeat();
                 }
             }
