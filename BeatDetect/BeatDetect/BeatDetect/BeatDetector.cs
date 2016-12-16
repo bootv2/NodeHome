@@ -22,6 +22,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Threading;
+using BeatDetect;
 using FMOD;
 
 namespace BeatDetectorCSharp
@@ -96,6 +98,7 @@ namespace BeatDetectorCSharp
         private float smoothMedian;
         private float beatThreshold;
         private float thresholdSmoother;
+        private NodeController nodeController;
 
 
         //Simple error checking function that returns information about FMOD_RESULT objects
@@ -257,9 +260,19 @@ namespace BeatDetectorCSharp
 
 	        Console.WriteLine("Song Length: " + minutes + ":" + seconds);
 	        Console.WriteLine("Sample Rate: " + sampleRate);
-            
-	        //std::cout << "Freq Range: " << hzRange << std::endl;
-	        //songChannel1.setVolume(0);
+
+            nodeController = NodeController.getInstance("http://192.168.1.104:1000/");
+
+            Console.WriteLine("NodeController initialized!");
+
+            nodeController.setRandomColor();
+
+            Thread.Sleep(1000);
+
+            nodeController.setRandomColor();
+
+            //std::cout << "Freq Range: " << hzRange << std::endl;
+            //songChannel1.setVolume(0);
 
         }
 
@@ -480,6 +493,7 @@ namespace BeatDetectorCSharp
 
 				        TimeStamp t = new TimeStamp(currentMinutes, currentSeconds, currentMillis, specFlux);
 				        Console.WriteLine("BEAT AT: " + t.getMinutes() + ":" + t.getSeconds() + ":" + t.getMilliseconds() + " -- BEAT FREQ: " + t.getFrequency() + " -- THRESHOLD: " + beatThreshold);
+                        nodeController.setRandomColor();
 				        lastBeatRegistered = t;
 			        }
                     else if (((uint) stopW.ElapsedMilliseconds - timeBetween) > 5000)

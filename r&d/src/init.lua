@@ -3,7 +3,6 @@
 print("IMPORTANT! REMEMBER: pwm duty of 999 is light off, pwm duty of 000 is max light.")
 dofile("deathraywifi.lua")
 dofile("initGPIOPins.lua")
-dofile("RGBController.lua")
 local apTimer = tmr.create()
 
 -- oo calling

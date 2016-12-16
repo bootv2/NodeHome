@@ -16,6 +16,7 @@ namespace BeatDetect
         BeatDetector detector = BeatDetector.Instance();
         private BeatReporter reporter;
         private string song = "net.mp3";
+        private string connectionString;
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace BeatDetect
 
         private void button2_Click(object sender, EventArgs e)
         {
+            connectionString = textBox2.Text;
+
             Task reporterTask = reporter.GetDetectionTask();
             reporterTask.Start();
         }

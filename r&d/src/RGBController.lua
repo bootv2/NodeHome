@@ -7,23 +7,24 @@ pwm.setup(7,500,1023);
 pwm.start(7);
 
      
+local modifier = 1;
 local r=666;
 local g = 0;
 local b = 333;
 local flagr=5;
 local flagg=5;
 local flagb=5;
-tmr.alarm(5,200,1,function()
+tmr.alarm(5,5,1,function()
   pwm.setduty(5,r);
   if flagr==1 then 
-    r=r-10;
+    r=r-modifier;
   
-    if r<128 then 
-      flagr=0 r=128 
+    if r<10 then 
+      flagr=0 r=10
     end
   
     else
-    r= r+10;
+    r= r+modifier;
   
     if r>1023 then 
       flagr=1 
@@ -32,17 +33,17 @@ tmr.alarm(5,200,1,function()
   end
 end)
 
-tmr.alarm(4,300,1,function()
+tmr.alarm(4,6,1,function()
   pwm.setduty(6,g);
   if flagg==1 then 
-    g=g-10;
+    g=g-modifier;
   
-    if g<128 then 
-      flagg=0 g=128 
+    if g<10 then 
+      flagg=0 g=10 
     end
   
     else
-    g= g+10;
+    g= g+modifier;
   
     if g>1023 then 
       flagg=1 
@@ -51,17 +52,17 @@ tmr.alarm(4,300,1,function()
   end
 end)
 
-tmr.alarm(3,500,1,function()
+tmr.alarm(3,7,1,function()
   pwm.setduty(7,b);
   if flagb==1 then 
-    b=b-10;
+    b=b-modifier;
   
-    if b<128 then 
-      flagb=0 b=128 
+    if b<10 then 
+      flagb=0 b=10 
     end
   
     else
-    b= b+10;
+    b= b+modifier;
   
     if b>1023 then 
       flagb=1 
@@ -70,11 +71,22 @@ tmr.alarm(3,500,1,function()
   end
 end)
 
+function forceDuties()
+  r = r
+  pwm.setduty(5,r);
+  g = g
+  pwm.setduty(6,g);
+  b = b
+  pwm.setduty(7,b);
+  r = r
+end
 
 function led(red,green,blue) 
     r = red
     g = green
     b = blue
+    
+    forceDuties()
 end
 
 function runRGBString(uri)

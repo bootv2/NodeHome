@@ -4,8 +4,12 @@ require("smartHome_NodeClass")
 require("statusLedController")
 require("autoDetectUtils")
 
+print("[i]setting cpu frequency to 160mhz!")
+node.setcpufreq(160)
+
 dofile("initGlobals.lua")
 dofile("http.lua")
+dofile("RGBController.lua")
 
 print("[i]Init complete!")
 print("[i]Ip:" .. thisNode:getIP())
