@@ -69,3 +69,14 @@ tmr.alarm(3,50,1,function()
     end
   end
 end)
+
+
+function led(red,green,blue) 
+    r = red
+    g = green
+    b = blue
+end
+
+function runRGBString(uri)
+    r, g, b = getRGBFromString(uri)
+end

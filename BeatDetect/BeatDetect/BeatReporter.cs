@@ -41,8 +41,11 @@ namespace BeatDetect
 
                 lastBeat = detector.getLastBeat();
 
+                Thread.Sleep(100);
+
                 if(lastBeat != null)
                 {
+                    Console.WriteLine($"lastbeat={0} getlastbeat={1}", lastBeat.getMilliseconds(), detector.getLastBeat().getMilliseconds());
                     if (!lastBeat.Equals(detector.getLastBeat()))
                         reportLastBeat();
                 }

@@ -15,6 +15,7 @@ namespace BeatDetect
     {
         BeatDetector detector = BeatDetector.Instance();
         private BeatReporter reporter;
+        private string song = "net.mp3";
         public Form1()
         {
             InitializeComponent();
@@ -23,9 +24,12 @@ namespace BeatDetect
         private void button1_Click(object sender, EventArgs e)
         {
             detector.loadSystem();
+
+            song = textBox1.Text;
+
             //electronic music most of the time needs a sample size of 2048
             //music like rage against the machine works best with a sample size of 256 but still barely works
-            detector.LoadSong(2048, "rapgod.mp3");
+            detector.LoadSong(2048, song);
             
             reporter = BeatReporter.GetReporterInstance(detector);
             Console.WriteLine("Instance initialized and loaded!");

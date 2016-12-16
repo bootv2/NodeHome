@@ -4,7 +4,7 @@ require("GPIOPinControl")
 require("FSUtils")
 require("autoDetectUtils")
 require("stringUtils")
-require("RGBController")
+--require("RGBController")
 
 function parseGetRequest(payload, conn)
     uri = getUriFromPayload(payload)
