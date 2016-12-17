@@ -10,6 +10,7 @@ node.setcpufreq(160)
 dofile("initGlobals.lua")
 dofile("http.lua")
 dofile("RGBController.lua")
+dofile("SNTPSync.lua")
 
 print("[i]Init complete!")
 print("[i]Ip:" .. thisNode:getIP())

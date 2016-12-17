@@ -1,0 +1,1 @@
+sntp.sync("192.168.1.125", print("[i]Time synced!"), print("[E]Time sync failed!"))
